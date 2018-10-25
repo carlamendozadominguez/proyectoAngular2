@@ -1,0 +1,21 @@
+  <div>
+      <label>Nombre del evento:
+        <input #heroName placeholder="name"/>
+        <br>
+        <br>
+        Lugar donde se relizará: <input #heroLugar placeholder="lugar"/>
+        <br>
+        <br>
+        Fecha del evento: <input #heroFecha placeholder="dd/mm/yyyy"/>
+        <br>
+        <br>
+        Breve descripción: <input #heroDescripcion placeholder=""/>
+        <br>
+        <br>
+      </label>
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button (click)="add(heroName.value,heroLugar.value,heroFecha.value,heroDescripcion.value);">
+        Añadir nuevo evento
+      </button>
+      <button (click)="goBack()">Atrás</button>
+    </div>

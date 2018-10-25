@@ -1,0 +1,38 @@
+<div class = "barra">
+  <div class = "add">
+      <button routerLink="/addevent"><i class="fas fa-plus fa-fw"></i>Añadir evento</button>
+  </div>
+
+  <div id="search-component">
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="  Search ..."/>
+    
+      <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async" >  
+            <div (click)="onSelect(hero)" >{{hero.name}}
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+<h2>Eventos:</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge"> <strong>{{hero.name}}</strong></span> <strong>Lugar:</strong> {{hero.lugar}}<strong> Fecha:</strong> {{hero.fecha}}
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <h2>Detalles de <strong>{{selectedHero.name | uppercase}}</strong></h2>
+  <div>{{selectedHero.details}}</div>
+</div>
+
+
+<!-- 
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

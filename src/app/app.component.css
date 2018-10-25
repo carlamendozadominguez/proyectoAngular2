@@ -1,0 +1,22 @@
+.cuerpo{
+    display: flex;
+    flex-direction: row;
+}
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffcb3d;
+    height: 100vh;
+    width: 15em;
+  }
+
+.eventos{
+    margin: 6em;
+}
+  
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
