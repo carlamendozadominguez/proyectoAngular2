@@ -1,17 +1,17 @@
 <div class="barra">
   <div class="barrasuperior">
-    <div class="add">
-      <button routerLink="/addevent"><i class="fas fa-plus fa-fw"></i>Añadir evento</button>
-    </div>
-
-    <div id="search-component">
-      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="  Search ..." />
+    <div id="search-component">Busca un evento: 
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search ..." />
 
       <ul class="search-result">
         <li *ngFor="let hero of heroes$ | async">
           <div (click)="onSelect(hero); searchBox.value = ''; search('')">{{hero.name}}</div>
         </li>
       </ul>
+    </div>
+
+    <div class="add">
+      <button routerLink="/addevent"><i class="fas fa-plus fa-fw"></i>Añadir evento</button>
     </div>
   </div>
 

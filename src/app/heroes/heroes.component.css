@@ -8,9 +8,15 @@
 .barrasuperior{
   display:flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 4em;
   border-bottom: 1px solid;
   border-bottom-color: black;
+  color: black;
+}
+
+#search-component{
+  margin:0;
 }
 
 .barraintermedia{
@@ -81,7 +87,8 @@
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
-  width:195px;
+  margin-left: 7.94em;
+  width:194px;
   height: 16px;
   padding: 5px;
   background-color: white;
