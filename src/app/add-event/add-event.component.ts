@@ -34,14 +34,14 @@ export class AddEventComponent implements OnInit {
   }
 
 
-  add(name: string, lugar:string, fecha:string, descripcion: string): void {
+  add(name: string, lugar:string, fecha:string, details: string): void {
     //Trim quita los espacios en blanco
     name = name.trim();
     lugar = lugar.trim();
     fecha = fecha.trim();
-    descripcion = descripcion.trim();
+    details = details.trim();
     if (!name || !lugar || !fecha) { return; }
-    this.heroService.addHero({ name, lugar,fecha } as Hero)
+    this.heroService.addHero({ name, lugar,fecha, details} as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });

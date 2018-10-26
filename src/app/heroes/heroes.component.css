@@ -2,11 +2,38 @@
 
 .barra {
   display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-
+  flex-direction: column;
 }
 
+.barrasuperior{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px solid;
+  border-bottom-color: black;
+}
+
+.barraintermedia{
+  display:flex;
+  flex-direction: row;
+  margin-top:3em;
+}
+
+.info {
+  margin: 2em;
+  background: tomato;
+  background-color: #FBFBFB;
+  max-width: 2em;
+  min-width: 16em;
+  float: left;
+  padding: 1em;  
+  box-shadow: 0 0 15px #909090;
+}
+.info h2{
+  border-bottom: 1px solid;
+  border-bottom-color: #ffc423;
+  width: 100%;
+}
 .selected {
   background-color: #cccdce !important;
   color: black;
@@ -89,6 +116,7 @@ ul.search-result {
   margin-top: 0;
   padding-left: 0;
 }
+
 
 /*
 Copyright 2017-2018 Google Inc. All Rights Reserved.

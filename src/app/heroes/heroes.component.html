@@ -1,35 +1,43 @@
-<div class = "barra">
-  <div class = "add">
+<div class="barra">
+  <div class="barrasuperior">
+    <div class="add">
       <button routerLink="/addevent"><i class="fas fa-plus fa-fw"></i>Añadir evento</button>
-  </div>
+    </div>
 
-  <div id="search-component">
-      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="  Search ..."/>
-    
+    <div id="search-component">
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="  Search ..." />
+
       <ul class="search-result">
-        <li *ngFor="let hero of heroes$ | async" >  
-            <div (click)="onSelect(hero)" >{{hero.name}}
-            </div>
+        <li *ngFor="let hero of heroes$ | async">
+          <div (click)="onSelect(hero); searchBox.value = ''; search('')">{{hero.name}}</div>
         </li>
       </ul>
     </div>
   </div>
 
+  <div class="barraintermedia">
+    <div class="map">
+      <img width="500" alt="Map" src="https://atomicsmash-725c.kxcdn.com/wp-content/uploads/2017/09/BristolMap-1-520x350.png">
+    </div>
 
-<h2>Eventos:</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes"
-    [class.selected]="hero === selectedHero"
-    (click)="onSelect(hero)">
-    <span class="badge"> <strong>{{hero.name}}</strong></span> <strong>Lugar:</strong> {{hero.lugar}}<strong> Fecha:</strong> {{hero.fecha}}
-  </li>
-</ul>
+    <div class="info">
+      <div *ngIf="selectedHero">
+        <h2>Detalles de <strong>{{selectedHero.name | uppercase}}</strong></h2>
+        <div>{{selectedHero.details}}</div>
+      </div>
+    </div>
+  </div>
 
-<div *ngIf="selectedHero">
-  <h2>Detalles de <strong>{{selectedHero.name | uppercase}}</strong></h2>
-  <div>{{selectedHero.details}}</div>
+  
+  <h2>Eventos:</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+      <span class="badge"> <strong>{{hero.name}}</strong></span> <strong>Lugar:</strong> {{hero.lugar}}<strong>
+        Fecha:</strong>
+      {{hero.fecha}}
+    </li>
+  </ul>
 </div>
-
 
 <!-- 
 Copyright 2017-2018 Google Inc. All Rights Reserved.
